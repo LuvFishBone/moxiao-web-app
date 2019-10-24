@@ -1,0 +1,21 @@
+{
+  "name": "moxiao-web-app",
+  "version": "1.0.0",
+  "description": "this is moxiao web app",
+  "main": "index.js",
+  "repository": "git@github.com:LuvFishBone/moxiao-web-app.git",
+  "author": "zhifei",
+  "license": "MIT",
+  "scripts": {
+    "dev": "",
+    "build": ""
+  },
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-merge": "^4.2.2"
+  }
+}
