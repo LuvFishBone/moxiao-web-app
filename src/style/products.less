@@ -1,0 +1,48 @@
+@import '../style/init/mixins.less';
+.p-products{
+    .pd-box{
+        // max-width: 750px;
+        // margin: 0 auto;
+
+        .item{
+            .flexbox();
+            .align-items-wd(center);
+            .flex-direction-vertical();
+            .flex-justify-wd(center);
+            // width: 690px;
+            margin: 0 30px;
+            padding: 76px 0;
+            margin-bottom: 40px;
+            background:rgba(245,245,245,1);
+            .tit{
+                font-size: 48px;
+            }
+            .line{
+                width: 120px;
+                height: 2Px;
+                margin: 44px 0 20px;
+                border-top:1Px solid rgba(112,112,112,1);
+            }
+            .stit, .stit1{
+                font-size: 36px;
+            }
+            .stit1{
+                padding: 20px 0 44px;
+            }
+            .desc{
+                width: 344px;
+                font-size: 28px;
+                color: #666;
+            }
+        }
+    }
+
+    .sm{
+        .banner{
+            img{
+                display: inline-block;
+                width: 100%;
+              } 
+        }
+    }
+}

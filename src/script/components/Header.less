@@ -1,0 +1,33 @@
+@import '../../style/init/mixins.less';
+.header{
+    height: 40px;
+    background-color: #222;
+    color: #fff;
+    font-size: 10px;
+    padding:0 30px;
+    .flexbox();
+    .flex-justify-wd(center);
+    .align-items-wd(center);
+    .left{
+        .flex(1);
+    }
+    .right{
+        width: 120px;
+        .flexbox();
+        .flex-justify-wd(space-between);
+        .item{
+            color: #fff;
+        }
+    }
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.hide{
+    height: 0;
+    opacity: 0;
+}
+.show{
+    height: 40px;
+    opacity: 1;
+}
