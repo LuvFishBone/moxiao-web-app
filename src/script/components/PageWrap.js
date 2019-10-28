@@ -19,6 +19,10 @@ class PageWrap extends Component {
     this.setState({ showHeader: res });
   }
 
+  componentDidMount() {
+    document.getElementById('menu-list').addEventListener('touchmove', (e) => { e.preventDefault(); });
+  }
+
   render() {
     const { showHeader } = this.state;
     return(

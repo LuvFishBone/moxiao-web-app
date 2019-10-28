@@ -35,7 +35,7 @@ class Menu extends Component {
                     <div styleName={`z ${!menuStatus ? '' : 'collapse rotate150 rotate135'}`}></div>
                 </div>
             </div>
-            <div styleName={`menu-list ${!menuStatus ? '' : 'on'}`}>
+            <div id="menu-list" styleName={`menu-list ${!menuStatus ? '' : 'on'}`}>
                 <ul styleName={!menuStatus ? '' : 'open'}>
                     <li><span>首页</span></li>
                     <li><span>产品介绍</span></li>

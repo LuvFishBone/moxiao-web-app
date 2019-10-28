@@ -41,11 +41,6 @@ const Utils = {
   hideLoading() {
     $('.cp-spinner-mask').hide();
   },
-
-  formatBankCardNumber(val) {
-    if (!val) return '';
-    return val.replace(/[^\d]/g, '').replace(/(^\d{4}\B|\d{4}\B)/g, '$1 ');
-  }
 };
 
 export default Utils;
