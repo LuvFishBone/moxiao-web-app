@@ -5,7 +5,9 @@ import Title from '../components/Title';
 class ContactUs extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+        partners: []
+    };
   }
 
   componentWillMount() {
@@ -13,6 +15,15 @@ class ContactUs extends Component {
   }
 
   componentDidMount() {
+    this.getPartners();
+
+    var partnerSwiper = new Swiper ('#partners-box', {
+        pagination: {
+          el: '.swiper-pagination',
+        },
+    })
+
+    document.body.scrollTop = 0;
     // 百度地图API功能
     function G(id) {
         return document.getElementById(id);
@@ -25,6 +36,15 @@ class ContactUs extends Component {
     });
     var msearch = '武汉市江岸区福星国际商户大厦2210室';
     local.search(msearch);  //百度地图关键字检索 默认加载一次
+  }
+
+  getPartners() {
+    API.get('/api/partners/list', {}, (res) => {
+        const { data } = res;
+        this.setState({
+            partners: data
+        });
+      })
   }
 
   render() {
@@ -128,7 +148,23 @@ class ContactUs extends Component {
             <div className="cb mpc-box">
                 <Title name="主要合作公司" desc="Major Partner Company" />
                 <div className="list">
-                    主要合作公司动态数据
+                    <div id="partners-box" className="swiper-container">
+                        <div className="swiper-wrapper">
+                            {
+                                this.state.partners.map((item, index) => (
+                                    <div key={index} className="swiper-slide">
+                                        <div className="item">
+                                            <div className="tit">{item.name}</div>
+                                            <div className="li">{item.address}</div>
+                                            <div className="li">{item.tel}</div>
+                                            <div className="li">{item.email}</div>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div className="swiper-pagination"></div>
+                    </div>
                 </div>
             </div>
           </div>

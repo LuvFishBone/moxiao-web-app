@@ -9,7 +9,15 @@ class Home extends Component {
   }
 
   componentWillMount() {
-    Utils.updatePageTitle('首页1');
+    Utils.updatePageTitle('首页');
+  }
+
+  componentDidMount() {
+    var mySwiper = new Swiper ('.home-banner', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    })
   }
 
   render() {
@@ -17,7 +25,14 @@ class Home extends Component {
       <PageWrap>
         <div className="p-home">
           <div className="p-banner">
-            <img src={require('../../imgs/home/banner.png')} alt="墨小数据" />
+            <div className="home-banner swiper-container">
+                <div className="swiper-wrapper">
+                    <div className="swiper-slide"><img src={require('../../imgs/home/banner-1.png')} alt="墨小数据" /></div>
+                    <div className="swiper-slide"><img src={require('../../imgs/home/banner-2.png')} alt="墨小数据" /></div>
+                    <div className="swiper-slide"><img src={require('../../imgs/home/banner-3.png')} alt="墨小数据" /></div>
+                </div>
+                <div className="swiper-pagination"></div>
+            </div>
           </div>
           <div className="content">
             <Title name="产品优势" desc="Product advantages" />

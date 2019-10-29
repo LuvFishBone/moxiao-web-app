@@ -39,8 +39,8 @@
     "$core": true,
     "API": true,
     "Utils": true,
-    "WelabAPP": true,
-    "welab": true
+    "moxiaoAPP": true,
+    "moxiao": true
   },
   "parser": "babel-eslint"
 }

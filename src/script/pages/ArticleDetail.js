@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PageWrap from '../components/PageWrap';
-import Title from '../components/Title';
 
 class ArticleDetail extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      detail: {}
+    };
   }
 
   componentWillMount() {
@@ -13,17 +14,29 @@ class ArticleDetail extends Component {
   }
 
   componentDidMount() {
+    this.getArticleById();
+  }
 
+  getArticleById() {
+    const id = this.props.match.params.id;
+    API.get(`/api/article/queryById/${id}`, {}, (res) => {
+      const { data } = res;
+      this.setState({
+        detail: data[0]
+      });
+    })
   }
 
   render() {
+    const { detail } = this.state;
+    const datatime = Utils.formatDt(detail.createTime).newsDate.year + '/' + Utils.formatDt(detail.createTime).newsDate.md;
     return (
       <PageWrap>
         <div className="p-article-detail">
-            <h1 className="tit">坚守合规经营，履职反洗钱义务</h1>
-            <div className="info">时间：2019-09-03 浏览量：7307</div>
+            <h1 className="tit">{detail.title}</h1>
+            <div className="info">时间：{datatime} 浏览量：{detail.views || 230}</div>
             <div className="cb contents">
-                这里是文章内容
+                <div dangerouslySetInnerHTML={{__html: detail.content}} />
             </div>
         </div>
       </PageWrap>

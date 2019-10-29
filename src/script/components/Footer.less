@@ -13,12 +13,19 @@
                 .flex-justify-wd(space-between);
             }
             .list{
-                height: 0;
+                transition: all .5s ease-in-out;
                 overflow: hidden;
                 padding-left: 30px;
                 li{
                     padding: 10px 0;
+                    a{
+                        color: #fff;
+                    }
                 }
+            }
+            .hide{
+                height: 0;
+                opacity: 0;
             }
         }
     }

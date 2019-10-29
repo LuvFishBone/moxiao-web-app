@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import {Link} from 'react-router-dom';
 import styles from './Menu.less';
 class Menu extends Component {
   constructor(props) {
@@ -37,12 +37,12 @@ class Menu extends Component {
             </div>
             <div id="menu-list" styleName={`menu-list ${!menuStatus ? '' : 'on'}`}>
                 <ul styleName={!menuStatus ? '' : 'open'}>
-                    <li><span>首页</span></li>
-                    <li><span>产品介绍</span></li>
-                    <li><span>解决方案</span></li>
-                    <li><span>新闻中心</span></li>
-                    <li><span>合作加盟</span></li>
-                    <li><span>联系我们</span></li>
+                    <li><Link to="/home">首页</Link></li>
+                    <li><Link to="/products">产品介绍</Link></li>
+                    <li><Link to="/solution">解决方案</Link></li>
+                    <li><Link to="/news">新闻中心</Link></li>
+                    <li><Link to="/joinUs">合作加盟</Link></li>
+                    <li><Link to="/contactUs">联系我们</Link></li>
                 </ul>
             </div>
         </div>
