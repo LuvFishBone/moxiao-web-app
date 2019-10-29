@@ -1,0 +1,32 @@
+.title-box{
+    text-align: center;
+    padding: 80px 0 40px;
+    .tit{
+        font-size: 48px;
+        color: #000;
+    }
+    .desc{
+        font-size: 28px;
+        color: #666;
+        span{
+            display: inline-block;
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -108px;
+                width: 100px;
+                border-top:1Px solid rgba(112,112,112,1);
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: -108px;
+                width: 100px;
+                border-top:1Px solid rgba(112,112,112,1);
+            }
+        }
+    }
+}

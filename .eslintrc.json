@@ -1,0 +1,46 @@
+{
+  // "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["warn"],
+    "import/no-dynamic-require": ["off"],
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "func-names": "off",
+    "no-plusplus": "off",
+    "global-require": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-unused-expressions": "warn",
+    "react/jsx-no-bind": "warn",
+    "class-methods-use-this": "off",
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "react/no-array-index-key": "off",
+    "react/no-find-dom-node": "warn",
+    "react/no-string-refs": "warn",
+    "max-len": "warn",
+    "no-undef": "warn",
+    "array-callback-return": "off",
+    "no-restricted-syntax": "off",
+    "react/require-default-props": "off",
+    "react/forbid-prop-types": "warn",
+    "no-multi-assign": "off",
+    "no-useless-constructor": "off",
+    "react/prefer-stateless-function": "warn",
+    "no-script-url": "off",
+    "react/sort-comp": "off",
+    "no-param-reassign": "off",
+    "consistent-return": "off"
+  },
+  "globals": {
+    "$": true,
+    "$core": true,
+    "API": true,
+    "Utils": true,
+    "WelabAPP": true,
+    "welab": true
+  },
+  "parser": "babel-eslint"
+}

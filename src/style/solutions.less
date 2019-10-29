@@ -1,0 +1,80 @@
+@import '../style/init/mixins.less';
+.p-solutions{
+    .content{
+        .ts-box{
+            .ts-img{
+                width: 100%;
+                height: 452px;
+                .bg('../../imgs/solutions/ts.png', cover);
+            }
+            .ts-txt{
+                padding-top: 40px;
+                font-size: 28px;
+                color: #666;
+            }
+        }
+
+        .op-box{
+            .item{
+                position: relative;
+                margin-bottom: 40px;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, .55);
+                }
+                .cont{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                    color: #fff;
+                    .flexbox();
+                    .flex-direction-vertical();
+                    .flex-justify-wd(center);
+                    .align-items-wd(center);
+                    .tit{
+                        font-size: 48px;
+                    }
+                    .line{
+                        width: 120px;
+                        height: 2Px;
+                        margin: 20px 0;
+                        border-top:1Px solid rgba(255,255,255,1);
+                    }
+                    .desc{
+                        font-size: 36px;
+                    }
+                    .detail{
+                        position: absolute;
+                        right: 30px;
+                        bottom: 30px;
+                    }
+                }
+            }
+        }
+
+        .cp-box{
+            .item{
+                margin-bottom: 40px;
+                text-align: center;
+                background:rgba(245,245,245, .7);
+                .tit{
+                    padding: 40px 0 20px;
+                    font-size: 48px;
+                }
+                .desc{
+                    padding: 0 75px 68px;
+                    font-size: 28px;
+                    color: #666;
+                }
+            }
+        }
+    }
+}

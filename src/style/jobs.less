@@ -1,0 +1,90 @@
+.p-jobs{
+    .content{
+        .jobs{
+            .job-list{
+                .title{
+                    height: 66px;
+                    background: #3577C4;
+                    color: #fff;
+                    font-size: 18px;
+                    .flexbox();
+                    .flex-justify-wd(center);
+                    .align-items-wd(center);
+                    div{
+                        .flex(1);
+                        text-align: center;
+                    }
+                }
+                .jobs-box{
+                    li{
+                        .job-tit{
+                            height: 80px;
+                            color: #646464;
+                            font-size: 14px;
+                            .flexbox();
+                            .flex-justify-wd(center);
+                            .align-items-wd(center);
+                            div{
+                                text-align: center;
+                                .flex(1);
+                                overflow:hidden; 
+                                text-overflow:ellipsis;
+                                white-space:nowrap;
+                            }
+                            .job-name{
+                                .flexbox();
+                                .flex-justify-wd(center);
+                                .align-items-wd(center);
+                                position: relative;
+                                .name{
+                                    margin: 20px;
+                                }
+                                .arrow{
+                                    // position: absolute;
+                                    display: inline-block;
+                                    width: 14px;
+                                    height: 14px;
+                                    border-top-left-radius: 2px;
+                                    border-left: 1px solid #5d5d5d;
+                                    border-top:1px solid #5d5d5d;
+                                    transform: rotate(-135deg);
+                                }
+                                .down{
+                                    top: 50%;
+                                    transform: rotate(45deg);
+                                }
+                            }
+                        }
+                        .job-detail-box{
+                            .job-detail{
+                                .flexbox();
+                                .flex-direction-vertical();
+                                border-top: 1Px solid #E6E6E6;
+                                padding-bottom: 20px;
+                                .item{
+                                    padding-left: 30px;
+                                    .tit{
+                                        font-size: 32px;
+                                        padding: 30px 0 16px;
+                                    }
+                                    .desc{
+                                        p{
+                                            font-size: 28px;
+                                            line-height: 40px;
+                                            color: #666;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .none{
+                            display: none;
+                        }
+                        cursor: pointer;
+                        border-bottom: 1Px solid #E6E6E6;
+                    }
+                }
+            }
+        }
+    }
+}

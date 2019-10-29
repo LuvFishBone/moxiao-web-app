@@ -1,0 +1,102 @@
+@import '../style/init/mixins.less';
+.p-joinUs{
+    .content{
+        .pes-box{
+            .list{
+                .flexbox();
+                .flex-direction-horizontal();
+                .flex-wrap-xd(wrap);
+                .flex-justify-wd(space-between);
+                .item{
+                    width: 330px;
+                    margin-bottom: 40px;
+                    padding: 40px 20px;
+                    .flexbox();
+                    .flex-justify-wd(center);
+                    .align-items-wd(center);
+                    .flex-direction-vertical();
+                    text-align: center;
+                    background:rgba(255,255,255,1);
+                    -webkit-box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+                    box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+                    .tit{
+                        padding: 28px 0 20px;
+                        font-size: 40px;
+                    }
+                    .desc{
+                        width: 252px;
+                        font-size: 28px;
+                        color: #666;
+                    }
+                }
+                .item:nth(odd){
+                    margin-right: 30px;
+                }
+            }
+
+        }
+        .fhop-box{
+            text-align: center;
+            img{
+                padding-top: 30px;
+                display: inline-block;
+            }
+        }
+
+        .saop-box{
+            
+            .cont{
+                .flexbox();
+
+                padding: 36px 30px 40px;
+                background:rgba(245,245,245,1);
+                ul{
+                    .flex(1);
+                    font-size: 23px;
+                    color: #666;
+                    li:nth-child(2){
+                        padding: 12px 0;
+                    }
+                }
+                ul:last-child{
+                    padding-left: 30px;
+                }
+            }
+        }
+
+        .afc-box{
+            .form{
+                .item{
+                    padding-bottom: 32px;
+                    .label{
+                        font-size: 28px;
+                        color: #666;
+                        padding-bottom: 12px;
+                    }
+                    input{
+                        width:100%;
+                        padding: 24px 20px;
+                        font-size: 24px;
+                        border:1px solid rgba(204,204,204,1);
+                        background:rgba(255,255,255,1);
+                    }
+                    textarea{
+                        width: 100%;
+                        padding: 24px 20px;
+                        min-height: 200px;
+                    }
+                }
+                .submit{
+                    text-align: center;
+                    button{
+                        padding: 16px 56px;
+                        border: none;
+                        font-size: 28px;
+                        background:rgba(53,119,196,1);
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
