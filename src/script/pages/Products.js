@@ -36,13 +36,13 @@ class Products extends Component {
                 <div className="stit1">协议扣款</div>
                 <div className="desc">未来主流的业务形态，客户签约授权过程前置，剩余流程与合众支付、大额支付保持一致</div>
               </div>
-              <div className="item">
+              {/* <div className="item">
                 <div className="tit">大额支付</div>
                 <div className="line"></div>
                 <div className="stit">大额签约</div>
                 <div className="stit1">大额扣款</div>
                 <div className="desc">针对大额款项划扣，一次性一笔最高划扣25万按笔数收费，小钱解决大问题</div>
-              </div>
+              </div> */}
             </div>
             <div className="sm">
               <Title name="解决传统模式六大痛点" desc="Solution mode" />

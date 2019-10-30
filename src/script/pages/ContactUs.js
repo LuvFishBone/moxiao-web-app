@@ -15,15 +15,15 @@ class ContactUs extends Component {
   }
 
   componentDidMount() {
-    this.getPartners();
+    this.getPartners(() => {
+        var partnerSwiper = new Swiper ('#partners-box', {
+            pagination: {
+              el: '#partners-box .swiper-pagination',
+            },
+        })
+    });
 
-    var partnerSwiper = new Swiper ('#partners-box', {
-        pagination: {
-          el: '.swiper-pagination',
-        },
-    })
-
-    document.body.scrollTop = 0;
+    // document.body.scrollTop = 0;
     // 百度地图API功能
     function G(id) {
         return document.getElementById(id);
@@ -38,12 +38,12 @@ class ContactUs extends Component {
     local.search(msearch);  //百度地图关键字检索 默认加载一次
   }
 
-  getPartners() {
+  getPartners(cb) {
     API.get('/api/partners/list', {}, (res) => {
         const { data } = res;
         this.setState({
             partners: data
-        });
+        }, () => cb());
       })
   }
 
@@ -155,9 +155,9 @@ class ContactUs extends Component {
                                     <div key={index} className="swiper-slide">
                                         <div className="item">
                                             <div className="tit">{item.name}</div>
-                                            <div className="li">{item.address}</div>
-                                            <div className="li">{item.tel}</div>
-                                            <div className="li">{item.email}</div>
+                                            <div className="li">地址：{item.address}</div>
+                                            <div className="li">电话：{item.tel}</div>
+                                            <div className="li">邮箱：{item.email}</div>
                                         </div>
                                     </div>
                                 ))

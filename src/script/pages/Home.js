@@ -27,7 +27,7 @@ class Home extends Component {
           <div className="p-banner">
             <div className="home-banner swiper-container">
                 <div className="swiper-wrapper">
-                    <div className="swiper-slide"><img src={require('../../imgs/home/banner-1.png')} alt="墨小数据" /></div>
+                    {/* <div className="swiper-slide"><img src={require('../../imgs/home/banner-1.png')} alt="墨小数据" /></div> */}
                     <div className="swiper-slide"><img src={require('../../imgs/home/banner-2.png')} alt="墨小数据" /></div>
                     <div className="swiper-slide"><img src={require('../../imgs/home/banner-3.png')} alt="墨小数据" /></div>
                 </div>

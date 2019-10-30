@@ -1,15 +1,69 @@
 import React, { Component } from 'react';
 import PageWrap from '../components/PageWrap';
 import Title from '../components/Title';
+// import Toast from '../components/Toast';
 
 class JoinUs extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+        name: '',
+        cellphone: '',
+        address: '',
+        msg: ''
+    };
   }
 
   componentWillMount() {
     Utils.updatePageTitle('合作加盟');
+  }
+
+  inputChange = (e) => {
+    console.log(e.target.name);
+    const _name = e.target.name;
+    const _val = e.target.value;
+    this.setState({
+        [_name]: _val
+    });
+  }
+
+
+  submitInfo() {
+    const { name, cellphone, address, msg } = this.state;
+    API.post('/api/cooperation/add', { name, cellphone, address, msg }, (res) => {
+      if (res.code === 0) {
+        this.setState({
+            name: '',
+            cellphone: '',
+            address: '',
+            msg: ''
+        }, () => alert('提交成功！'));
+      }
+      else {
+        alert(res.msg);
+      } 
+    })
+  }
+
+  submit = () => {
+    const { name, cellphone, address, msg } = this.state;
+    if (!name) {
+        alert('请输入您的称呼');
+        return;
+    }
+    if (!cellphone) {
+        alert('请输入您的联系电话');
+        return;
+    } 
+    if (!/^1[3|4|5|6|7|8|9]\d{9}$/.test(cellphone)) {
+        alert('请输入正确的联系电话');
+        return;
+    } 
+    if (!address) {
+        alert('请输入您的地址');
+        return;
+    }
+    this.submitInfo();
   }
 
   render() {
@@ -90,22 +144,22 @@ class JoinUs extends Component {
                 <div className="form">
                     <div className="item">
                         <div className="label">联系人</div>
-                        <div><input type="text" placeholder="您的称呼" /></div>
+                        <div><input maxLength="30" type="text" value={this.state.name} name="name" onChange={this.inputChange} placeholder="您的称呼" /></div>
                     </div>
                     <div className="item">
                         <div className="label">联系电话</div>
-                        <div><input type="text" placeholder="联系电话" /></div>
+                        <div><input maxLength="11" type="text" value={this.state.cellphone} name="cellphone" onChange={this.inputChange} placeholder="联系电话" /></div>
                     </div>
                     <div className="item">
                         <div className="label">联系地址</div>
-                        <div><input type="text" placeholder="联系地址" /></div>
+                        <div><input maxLength="50" type="text" value={this.state.address} name="address" onChange={this.inputChange} placeholder="联系地址" /></div>
                     </div>
                     <div className="item">
                         <div className="label">留言</div>
-                        <div><textarea type="text" placeholder="写入一些信息……"></textarea></div>
+                        <div><textarea maxLength="200" type="text" value={this.state.msg} name="msg" onChange={this.inputChange} placeholder="写入一些信息……"></textarea></div>
                     </div>
                     <div className="submit">
-                        <button>提交</button>
+                        <button onClick={this.submit}>提交</button>
                     </div>
                 </div>
             </div>
