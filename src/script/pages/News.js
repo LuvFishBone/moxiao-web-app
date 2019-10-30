@@ -5,7 +5,10 @@ import Title from '../components/Title';
 class News extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      articleList: [
+      ],
+    };
   }
 
   componentWillMount() {
@@ -13,10 +16,25 @@ class News extends Component {
   }
 
   componentDidMount() {
+    this.getArticleList();
+  }
 
+  getArticleList() {
+    // 这里的分页之后再弄
+    API.get('/api/article/listSimple', {}, (res) => {
+      const { data } = res;
+      this.setState({
+        articleList: data
+      });
+    })
+  }
+
+  goDetail = (id) => {
+    this.props.history.push(`/articleDetail/${id}`);
   }
 
   render() {
+    const { articleList } = this.state; 
     return (
       <PageWrap>
         <div className="p-news">
@@ -26,26 +44,27 @@ class News extends Component {
           <div className="content">
             <Title name="新闻中心" desc="News Center" />
             <div className="cb list">
-                <div className="item top">
-                    <div className="img">
-                        <img src={require('../../imgs/news/article-top.png')} width="100%" />
-                    </div>
-                    <div className="cont">
-                        <div className="tit">坚守合规经验，履职反洗钱义务</div>
-                        <div className="desc">合规经营是企业践行社会责任最基本的内容。墨小支付合规经营是企业践行社会责任最基本的内容。墨小支付落实中国人民银行、行业监管机构及行业协会的落实中国人民银行、行业监管机构及行业协会的</div>
-                        <div className="date">
-                            <span className="icon"></span>
-                            <span>09-03</span>
+                {
+                  articleList.map((item, index) => (
+                    <div key={item.id} className={`item ${index === 0 ? 'top' : ''}`} onClick={() => this.goDetail(item.id)}>
+                        {
+                          index === 0 ? (<div className="img"><img src={require('../../imgs/news/article-top.png')} width="100%" /></div>) : ''
+                        }
+                        <div className="cont">
+                            <div className="tit">{item.title}</div>
+                            <div className="desc">{item.intro}</div>
+                            {
+                              index === 0 ? (<div className='date'>
+                                <span className="icon"></span>
+                                <span>{Utils.formatDt(item.createTime).newsDate.md}</span>
+                              </div>) : ''
+                            }
                         </div>
                     </div>
-                </div>
-                <div className="item">
-                    <div className="cont">
-                        <div className="tit">坚守合规经验，履职反洗钱义务</div>
-                        <div className="desc">合规经营是企业践行社会责任最基本的内容。墨小支付落实中国人民银行、行业监管机构及行业协会合规经营是企业践行社会责任最基本的内容。墨小支付落实中国人民银行、行业监管机构及行业协会的合规经营是企业践行社会责任最基本的内容。墨小支付落实中国人民银行、行业监管机构及行业协会的合规经营是企业践行社会责任最基本的内容。墨小支付落实中国人民银行、行业监管机构及行业协会的</div>
-                    </div>
-                </div>
+                  ))
+                }
             </div>
+            <div className="load-more">点击加载更多</div>
           </div>
         </div>
       </PageWrap>

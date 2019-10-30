@@ -41,6 +41,23 @@ const Utils = {
   hideLoading() {
     $('.cp-spinner-mask').hide();
   },
+
+  formatDt (dtString) {
+    function fillZero(num) {
+      return num < 10 ? '0' + num : num;
+    }
+    const dt = new Date(dtString);
+    const year = dt.getFullYear();
+    const month = dt.getMonth() + 1;
+    const date = dt.getDate();
+    return {
+      newsDate: {
+        year: year,
+        md: `${fillZero(month)}/${fillZero(date)}`,
+      },
+      detailDate: `${year}-${month}-${date}`
+    }
+  }
 };
 
 export default Utils;

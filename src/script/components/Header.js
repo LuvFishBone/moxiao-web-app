@@ -24,8 +24,9 @@ class Header extends Component{
             <div styleName={classNames('header', !this.state.show ? 'show': 'hide')}>
                 <div styleName="left">客服电话: 400-676-0009</div>
                 <div styleName="right">
-                    <a styleName="item" href="javascript:void(0)">登录</a>
-                    <a styleName="item" href="javascript:void(0)">注册</a>
+                    
+                    {/* <a styleName="item" href="javascript:void(0)">注册</a> */}
+                    <a styleName="item" href="https://admin.moxiaoshuju.com/#/login/2">登录</a>
                 </div>
             </div>
           );

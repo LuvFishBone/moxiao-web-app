@@ -5,7 +5,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-  <link rel="shortcut icon" type="image/x-icon" href="//m.wolaidai.com/web-static/common/images/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="/src/imgs/favicon.ico" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   <script type="text/javascript">
     (function(c,f){var r=c.document;var b=r.documentElement;var m=r.querySelector('meta[name="viewport"]');var n=r.querySelector('meta[name="flexible"]');var a=0;var q=0;var l;var d=f.flexible||(f.flexible={});if(m){console.warn("灏嗘牴鎹凡鏈夌殑meta鏍囩鏉ヨ缃缉鏀炬瘮渚�");var e=m.getAttribute("content").match(/initial\-scale=([\d\.]+)/);if(e){q=parseFloat(e[1]);a=parseInt(1/q)}}else{if(n){var j=n.getAttribute("content");if(j){var p=j.match(/initial\-dpr=([\d\.]+)/);var h=j.match(/maximum\-dpr=([\d\.]+)/);if(p){a=parseFloat(p[1]);q=parseFloat((1/a).toFixed(2))}if(h){a=parseFloat(h[1]);q=parseFloat((1/a).toFixed(2))}}}}if(!a&&!q){var o=!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);var k=c.devicePixelRatio;if(o){if(k>=2&&(!a||a>=2)){a=2}else{a=1}}else{a=1}q=1/a}b.setAttribute("data-dpr",a);if(!m){m=r.createElement("meta");m.setAttribute("name","viewport");m.setAttribute("content","width=device-width,initial-scale="+q+", maximum-scale="+q+", minimum-scale="+q+", user-scalable=no");if(b.firstElementChild){b.firstElementChild.appendChild(m)}else{var g=r.createElement("div");g.appendChild(m);r.write(g.innerHTML)}}function i(){var s=b.getBoundingClientRect().width;if(s/a>540){s=540*a}var t=s/7.5;b.style.fontSize=t+"px";d.rem=c.rem=t}c.addEventListener("resize",function(){clearTimeout(l);l=setTimeout(i,300)},false);c.addEventListener("pageshow",function(s){if(s.persisted){clearTimeout(l);l=setTimeout(i,300)}},false);if(r.readyState==="complete"){r.body.style.fontSize=12*a+"px"}else{r.addEventListener("DOMContentLoaded",function(s){r.body.style.fontSize=12*a+"px"},false)}i();d.dpr=c.dpr=a;d.refreshRem=i;d.rem2px=function(t){var s=parseFloat(t)*this.rem;if(typeof t==="string"&&t.match(/rem$/)){s+="px"}return s};d.px2rem=function(t){var s=parseFloat(t)/this.rem;if(typeof t==="string"&&t.match(/px$/)){s+="rem"}return s}})(window,window.lib||(window.lib={}));
   </script>
@@ -19,8 +20,9 @@
       <div class="cp-spinner"></div>
     </div>
   </div>
-  <script type="text/javascript" src="//m.wolaidai.com/web-static/common/script/zepto.min.js?v=a20180615"></script>
-  <script type="text/javascript" src="//m.wolaidai.com/web-static/common/bundle/rct1554.bundle.js?v=a20180615"></script>
+  <script type="text/javascript" src="https://moxiaoshuju.com/m/gwjs/zepto-1.2.0-min.js"></script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <script type="text/javascript" src="https://moxiaoshuju.com/m/gwjs/react1554.bundle.js"></script>
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=fbXf9j0aPH4EwxPBaixZ8Ll2rGwMbFe8"></script>
 </body>
 </html>

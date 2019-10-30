@@ -9,7 +9,7 @@ module.exports = function () {
       'react-hot-loader/patch',
       // activate HMR for React
 
-      `webpack-dev-server/client?http://localhost:3108`,
+      `webpack-dev-server/client?http://localhost:3377`,
       // bundle the client for webpack-dev-server
       // and connect to the provided endpoint
 
@@ -40,7 +40,7 @@ module.exports = function () {
     devServer: {
       hot: true,
       // 开启服务器的模块热替换(HMR)
-      port: 3108,
+      port: 3377,
 
       historyApiFallback: {
         rewrites: [
@@ -55,6 +55,10 @@ module.exports = function () {
       // host: '0.0.0.0',
 
       disableHostCheck: true,
+
+      proxy: {
+        '/api': 'http://localhost:3366',
+      }
     },
 
     plugins: [
