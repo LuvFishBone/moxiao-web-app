@@ -56,8 +56,8 @@ module.exports = {
     extractLess,
     extractCSSModule,
     new HtmlWebpackPlugin({
-      filename: 'main.html',
-      template: 'main.ejs'
+      filename: 'index.html',
+      template: 'index.ejs'
     }),
   ],
 
