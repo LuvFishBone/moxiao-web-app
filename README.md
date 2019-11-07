@@ -9,7 +9,7 @@
 
 2. `npm start`
 
-3. open [http://localhost:3108/index.html](http://localhost:3108/index.html)
+3. open [http://localhost:3377/index.html]
 
 ## for build
 1. `npm run build`//build

@@ -42,11 +42,7 @@ module.exports = function () {
       // 开启服务器的模块热替换(HMR)
       port: 3377,
 
-      historyApiFallback: {
-        rewrites: [
-          { from: /\/*/, to: '/main.html' },
-        ],
-      },
+      historyApiFallback: true,
       // respond to 404s with main.html
 
       contentBase: path.resolve(__dirname, '../src/'),
