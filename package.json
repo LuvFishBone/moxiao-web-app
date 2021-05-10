@@ -20,7 +20,7 @@
     "blueimp-load-image": "^2.20.1",
     "classnames": "^2.2.5",
     "history": "4.6.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "prop-types": "^15.7.2",
     "react": "15.5.4",
     "react-css-modules": "^4.7.1",
